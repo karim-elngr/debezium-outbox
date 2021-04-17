@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.karimelnaggar.debezium.outbox.starter.DebeziumOutboxAutoConfiguration

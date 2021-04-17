@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache Software License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
  */
-package com.karimelnaggar.debezium.outbox.opentracing.internal;
+package com.karimelnaggar.debezium.outbox.starter.opentracing.internal;
 
 import java.io.IOException;
 import java.io.StringWriter;

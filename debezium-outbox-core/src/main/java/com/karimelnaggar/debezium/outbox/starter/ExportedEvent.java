@@ -3,7 +3,9 @@
  *
  * Licensed under the Apache Software License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
  */
-package com.karimelnaggar.debezium.outbox;
+package com.karimelnaggar.debezium.outbox.starter;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 import java.time.Instant;
 
@@ -12,14 +14,14 @@ import java.time.Instant;
  *
  * @author Chris Cranford
  */
-public interface ExportedEvent<I, P> {
+public interface ExportedEvent {
 
     /**
      * The id of the aggregate affected by a given event.  For example, the order id in case of events
      * relating to an order, or order lines of that order.  This is used to ensure ordering of events
      * within an aggregate type.
      */
-    I getAggregateId();
+    String getAggregateId();
 
     /**
      * The type of the aggregate affected by the event.  For example, "order" in case of events relating
@@ -41,5 +43,5 @@ public interface ExportedEvent<I, P> {
     /**
      * The event payload.
      */
-    P getPayload();
+    JsonNode getPayload();
 }

@@ -1,4 +1,4 @@
-package com.karimelnaggar.debezium.outbox;
+package com.karimelnaggar.debezium.outbox.starter;
 
 public interface EventDispatcher {
 
@@ -8,5 +8,5 @@ public interface EventDispatcher {
      *
      * @param event the exported event
      */
-    void onExportedEvent(ExportedEvent<?, ?> event);
+    void onExportedEvent(ExportedEvent event);
 }

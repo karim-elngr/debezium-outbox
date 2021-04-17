@@ -12,10 +12,19 @@
     <artifactId>debezium-outbox-spring-boot-starter</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.karimelnaggar</groupId>
+            <artifactId>debezium-outbox-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
 </project>
