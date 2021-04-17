@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hibernate-mapping package="com.karimelnaggar.debezium.outbox">
+    <identifier-generator class="uuid2" name="uuid2"/>
+    <class table="OutboxEvent" entity-name="com.karimelnaggar.debezium.outbox.internal.OutboxEvent">
+        <id name="id" type="java.util.UUID">
+            <column name="id"/>
+            <generator class="uuid2"/>
+        </id>
+        <property name="aggregateType" not-null="true" type="string">
+            <column name="aggregatetype"/>
+        </property>
+        <property name="aggregateId" not-null="true" type="java.lang.String">
+            <column name="aggregateid"/>
+        </property>
+        <property name="type" not-null="true" type="string">
+            <column name="type"/>
+        </property>
+        <property name="timestamp" not-null="true" type="Instant">
+            <column name="timestamp"/>
+        </property>
+        <property name="payload" not-null="false" type="converted::com.karimelnaggar.debezium.outbox.internal.JsonNodeAttributeConverter">
+            <column name="payload" sql-type="varchar(8000)"/>
+        </property>
+        <property name="tracingspancontext" not-null="false" type="string">
+            <column length="256" name="tracingspancontext"/>
+        </property>
+    </class>
+</hibernate-mapping>
